@@ -158,11 +158,3 @@ end
 service "jenkins" do
   action :restart
 end
-
-execute "run build" do
-  command "java -jar jenkins-cli.jar -s http://localhost:8080/ build jensonar"
-  cwd "/mnt/"
-  timeout 60
-  retries 10
-  action :run
-end
